@@ -1,0 +1,222 @@
+#root {
+  text-align: center;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: whitesmoke;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background: rgb(26, 26, 70);
+  color: whitesmoke;
+  height: 15vh;
+}
+
+.left-side {
+  flex: 1;
+}
+
+.navbar-container h2 {
+  font-size: 2.4em;
+  flex: 1;
+}
+
+.delete-button {
+  flex: 1;
+}
+
+.task-delete-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hide-delete {
+  visibility: hidden;
+  padding: 10px;
+}
+
+.show-delete {
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 10px;
+}
+
+.show-delete:hover {
+  cursor: pointer;
+  padding: 10px;
+  background: rgb(209, 208, 208);
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+.tasks-section-container {
+  height: 82vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 3vh;
+  overflow: auto;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(159, 30, 30, 0.25);
+  width: 55ch;
+  font-size: 1.1em;
+  padding: 7px 15px;
+  text-align: start;
+  border-radius: 0 40px 40px 0;
+  transition: background 0.5s ease-in;
+}
+
+.task-container-done {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(122, 193, 66, 0.45);
+  width: 55ch;
+  font-size: 1.1em;
+  padding: 7px 15px;
+  text-align: start;
+  border-radius: 0 40px 40px 0;
+  transition: background 0.5s ease-in;
+}
+
+.task-container-done p {
+  text-decoration: line-through;
+}
+
+.add-new-task {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(219, 219, 219, 0.8);
+  border: 3px solid rgb(219, 219, 219, 0.8);
+  border-radius: 50px;
+}
+
+.add-new-task-text {
+  height: 40px;
+  padding-bottom: 15px;
+  width: 50px;
+  font-size: 2em;
+}
+
+.add-new-task:hover {
+  border: 3px solid gray;
+  border-style: dashed;
+  transition: width 0.6s;
+  width: 58ch;
+}
+
+.add-new-task-input {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  width: 55ch;
+  font-size: 1.1em;
+  background: rgb(219, 219, 219, 0.8);
+  border-radius: 0 40px 40px 0;
+  padding: 7px 15px;
+  border: 3px solid gray;
+  border-style: dashed;
+  transition: width 0.6s;
+}
+
+.title-input {
+  width: 14ch;
+}
+
+.description-input {
+  width: 34ch;
+}
+
+.new-task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.save {
+  background: rgb(55, 168, 55);
+  color: white;
+}
+
+.cancel {
+  background: rgb(181, 65, 65);
+  color: white;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  font-size: 1.3em;
+  padding: 4px 25px;
+  border: gainsboro 1px solid;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+input {
+  font-size: 1.2em;
+  padding: 2px 5px;
+  border: none;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+p {
+  padding: 0 0 3px 3px;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.checkbox {
+  height: 26px;
+  width: 26px;
+  background: whitesmoke;
+  margin-right: 10px;
+  border: 1px solid rgb(159, 30, 30);
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.done {
+  border: none !important;
+}
