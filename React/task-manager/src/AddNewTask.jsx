@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { urlToFlask } from "./utility";
 import BinPng from "./assets/bin.png";
 
-const AddNewTask = ({ setTasks }) => {
+const AddNewTask = ({ tasks, setTasks }) => {
   const [inputOpen, setInputOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -16,13 +16,13 @@ const AddNewTask = ({ setTasks }) => {
   const createTaskObject = () => {
     return {
       title: title,
-      content: description,
+      description: description,
       done: false,
     };
   };
 
   const saveHandler = async () => {
-    let response = await fetch(urlToFlask("tasks/create"), {
+    let response = await fetch(urlToFlask("tasks"), {
       method: "POST",
       mode: "cors",
       headers: {
@@ -31,7 +31,7 @@ const AddNewTask = ({ setTasks }) => {
       body: JSON.stringify(createTaskObject()),
     });
     let json = await response.json();
-    setTasks([...json]);
+    setTasks([...tasks, json]);
     setInputOpen(false);
     setTitle("");
     setDescription("");

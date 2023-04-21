@@ -8,7 +8,7 @@ const TasksSection = ({ tasks, setTasks }) => {
       {tasks.map((task, id) => {
         return <Task key={task.id} task={task} setTasks={setTasks} />;
       })}
-      <AddNewTask setTasks={setTasks} />
+      <AddNewTask setTasks={setTasks} tasks={tasks} />
     </div>
   );
 };

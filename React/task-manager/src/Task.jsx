@@ -9,7 +9,7 @@ const Task = ({ setTasks, task }) => {
   console.log(isDone);
 
   const deleteHandler = async () => {
-    const response = await fetch(urlToFlask("tasks/delete"), {
+    const response = await fetch(urlToFlask(`/tasks/${task.id}`), {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -21,23 +21,14 @@ const Task = ({ setTasks, task }) => {
     setTasks([...json]);
   };
 
-  const createTaskObject = () => {
-    return {
-      id: task.id,
-      title: task.title,
-      content: task.content,
-      done: !isDone,
-    };
-  };
-
   const updateTaskInFlask = async () => {
-    await fetch(urlToFlask("tasks/update"), {
-      method: "POST",
+    await fetch(urlToFlask(`/tasks/${task.id}`), {
+      method: "PUT",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(createTaskObject()),
+      body: JSON.stringify({ done: !isDone }),
     });
   };
 
@@ -51,7 +42,7 @@ const Task = ({ setTasks, task }) => {
       <div className={isDone ? "task-container-done" : "task-container"}>
         <div>
           <h3>{task.title}</h3>
-          <p>{task.content}</p>
+          <p>{task.description}</p>
         </div>
         <span
           onClick={clickDoneHandler}
